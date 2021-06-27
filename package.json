@@ -1,0 +1,10 @@
+{
+  "name": "logsene-archiver",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@octokit/auth-app": "^3.5.2",
+    "@octokit/core": "^3.5.1",
+    "node-fetch": "^2.6.1"
+  }
+}

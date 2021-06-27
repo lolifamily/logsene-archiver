@@ -1,0 +1,22 @@
+name: Main CI
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "1 * * * *"
+jobs:
+  main:
+    name: Generate logs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup nodejs
+        uses: actions/setup-node@v1
+      - name: Install dependency
+        run: npm install
+      - name: Generate logs
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        run: node runner.js
